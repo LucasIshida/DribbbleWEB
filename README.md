@@ -1,3 +1,3 @@
 DribbbleWEB
 
-Nome: Erika Hamakami e Lucas Yassuo Ishida
+Alunos: Erika Hamakami e Lucas Yassuo Ishida
