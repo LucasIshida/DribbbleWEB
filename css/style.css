@@ -152,9 +152,100 @@ body {
     text-decoration: underline;
     color: #9E9EA7;
 }
-@media screen and (max-width: 600px)
+@media screen and (max-width: 578px)
 {
     .site-nav {
-        background-color: aqua;
+        display: none;
+    }
+    .container_fundo {
+        display: none;
+    }
+    .site-nav-mobile {    
+        background: #fff;    
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+    }
+    .site-container-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .menu-icon {
+        display: inherit !important;
+        align-items: center;
+        width: 18px;
+        height: 100%;
+    }
+    .site-logo-mobile {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 85px;
+        height: 60px;
+        margin: auto auto auto auto;
+    }
+    .sign_in {
+        align-items: center;
+        width: 69.88px;
+        height: 100%;
+        display: flex;
+    }
+    .sign_in a{
+        text-decoration: none;
+        color: #6e6d7a;
+    }
+    .container_fundo-mobile {
+        align-items: center;
+        margin-top: 60px;
+        display: block;
+        width: 100%;
+        height: 594px;
+    }
+    .container-imagem-fundo {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        height: 100%;
+    }
+    .imagem-fundo-tamanho {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+    }
+    .user-credits {
+        margin-top: 20px;
+        width: 137.18px;
+        height: 20px;
+    }
+    .container-imagem-fundo span{
+        font-size: 14px;
+        line-height: 20px;
+        color: #9E9EA7;
+    }
+    .container-imagem-fundo span a {
+        text-decoration: underline;
+        color: #9E9EA7;
+    }
+    .container-texto {
+        display: block;
+        width: 538.4px;
+        height: 148.8px;
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
     }
 }
