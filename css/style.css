@@ -166,8 +166,6 @@ body {
 
 @media screen and (max-width: 600px)
 {
-
-    
     .site-nav {
         display: none;
     }
@@ -227,9 +225,9 @@ body {
     .container-imagem-fundo {
         align-items: center;
         display: flex;
+        justify-content: center;
         flex-direction: column;
         width: 100%;
-        justify-content: center;
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 40px;
@@ -239,8 +237,8 @@ body {
     .imagem-fundo-tamanho {
         display: flex;
         align-items: center;
-        height: 300px;
         object-fit: contain;
+        height: 300px;
     }
     .user-credits {
         margin-top: 20px;
@@ -296,5 +294,4 @@ body {
         font-weight: bold;
         font-size: 14px;
     }
-
 }
