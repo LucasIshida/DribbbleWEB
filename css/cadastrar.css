@@ -54,6 +54,8 @@ nav a{
 }
 .container-cadastro
 {
+    width: 536px;
+    height: 664.6px;
     padding: 30px 60px 0;
 }
 .header-cadastro h1
@@ -61,10 +63,6 @@ nav a{
     margin-bottom: 30px;
     font-size: 24px;
     font-weight: bold;
-}
-.form-campo
-{
-    display: flex;;
 }
 label
 {
@@ -75,7 +73,7 @@ label
 }
 input
 {
-    width: 416px;
+    width: 100%;
     font-size: 14px;
     box-sizing: border-box;
     height: 40px;
