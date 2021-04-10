@@ -20,7 +20,8 @@ body {
 .container-lateral header
 {
     padding: 64px 64px 30px 64px;
-    width: 100%;
+    width: 514px;
+    float: left;
     height: 207.5px;
     position: fixed;
 }
