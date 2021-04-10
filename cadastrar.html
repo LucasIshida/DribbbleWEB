@@ -12,10 +12,12 @@
 <body>
     <div class="main-container">
             <div class="container-lateral">
-                    <a href="index.html">
+                <header>
+                    <a class="logo" href="index.html">
                         <img src="img/dribbble-icone-yellow.png" alt="dribbble-yellow" width="90" height="22.5">
                     </a>
-                    <p>Discover the world’s top Designers & Creatives.</p>
+                    <h1>Discover the world’s top Designers & Creatives.</h1>
+                </header>
             </div>
             <section>
                 <nav>
@@ -28,10 +30,29 @@
                     <div class="header-cadastro">
                         <h1>Sign up to Dribbble</h1>
                             <form class="cadastro" action="cadastro" method="post">
-                                <fieldset>
-                                    <input type="text" id="sign_up_google"/>
-                                    <button class="botao-google" name="button" type="submit">Sign up with Google</button>
+                                <button class="botao-google" name="button" type="submit">Sign up with Google</button>
                             </form>
+                    </div>
+                    <div class="dados-cadastro">
+                        <form action="">
+                            <fieldset>
+                                <div class="name">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name">
+                                </div>
+                                <div class="username">
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username">
+                                </div>
+                                <label for="email">Email</label>
+                                <input type="text" id="email">
+                                <label for="password">Password</label>
+                                <input type="text" id="password" placeholder="6+ characters">
+                                <div class="botao-cadastrar">
+                                    <input type="submit" name="commit" value="Create Account">
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </section>

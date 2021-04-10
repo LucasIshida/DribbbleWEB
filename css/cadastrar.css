@@ -14,24 +14,29 @@ body {
     background-color: #F2D184;
     color: #866118;
     float: left;
-    padding: 64px 64px 64px 64px;
     position: relative;
 
 }
-.container-lateral a
+.container-lateral header
+{
+    padding: 64px 64px 30px 64px;
+    width: 100%;
+    height: 207.5px;
+    position: fixed;
+}
+.logo
 {
     width: 386px;
-    height: 23.3px;
-    margin-bottom: 30px;
-    padding-right: 30px;
+    height: 23.5px;
 }
-.container-lateral p
+.container-lateral header h1
 {
+    width: 386px;
     font-size: 25px;
     font-weight: bold;
     line-height: 30px;
+    margin-top: 30px;
     padding-right: 30px;
-    display: block;
     text-align: left;
 }
 section
@@ -57,6 +62,8 @@ nav a{
     width: 536px;
     height: 664.6px;
     padding: 30px 60px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header-cadastro h1
 {
@@ -85,13 +92,56 @@ input
 }
 .botao-google
 {
-    width: 100%;
+    width: 353px;
+    height: 40px;
+    padding: 10px 16px;
     position: relative;
+    justify-content: center;
     display: flex;
-    flex-grow: 1;
     background-color: #4285f4;
     color: #ffffff;
     border: none;
-    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    outline: none;
 }
-
+.dados-cadastro
+{
+    width: 416px;
+    height: 475px;
+    margin-top: 80px;
+}
+.name
+{
+    width: 199.68px;
+    height: 82px;
+    float: left;
+}
+.username
+{
+    width: 199.68px;
+    height: 82px;
+    float: right;
+}
+.botao-cadastrar
+{
+    width: 416px;
+    height: 40px;
+}
+.botao-cadastrar input{
+    width: 200px;
+    height: 100%;
+    float: left;
+    border-radius: 8px;
+    background: #ea4c89;
+    margin-top: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
