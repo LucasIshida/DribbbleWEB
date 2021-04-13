@@ -113,28 +113,17 @@ input
     height: 475px;
     margin-top: 80px;
 }
-.name
-{
-    width: 199.68px;
-    height: 82px;
-    float: left;
-}
-.username
-{
-    width: 199.68px;
-    height: 82px;
-    float: right;
-}
 .botao-cadastrar
 {
     width: 416px;
     height: 40px;
 }
-.botao-cadastrar input{
+.botao-cadastrar button{
     width: 200px;
     height: 100%;
     float: left;
     border-radius: 8px;
+    border: none;
     background: #ea4c89;
     margin-top: 22px;
     padding-top: 10px;
