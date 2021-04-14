@@ -16,6 +16,7 @@ async function login_reqres (email, password)
         {
             alert ('You are logged');
             localStorage.setItem("Online", true);
+            buscarFatos();
         }
     }
     )
@@ -45,3 +46,22 @@ btn_login.addEventListener('click', (event) => {
 
     return true;
 })
+
+function buscarFatos() {
+        var fatos = Number(window.prompt("Number os facts:", ""));
+
+        if(fatos == "") {
+            alert("Invalid value")
+            return false
+        }
+        else {
+            axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount='+fatos)
+            
+            .then(function(response){
+                console.log(response.data)
+                alert("fact\n" +response.data[3])
+    
+            })
+        }
+
+}
