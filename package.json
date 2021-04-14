@@ -4,6 +4,7 @@
   "description": "DribbbleWEB",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "local-storage": "^2.0.0"
   },
   "devDependencies": {},
