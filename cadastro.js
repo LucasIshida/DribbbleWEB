@@ -31,7 +31,6 @@ btn_cadastrar.addEventListener('click', (event) => {
     save_data();
     return true;
 })
-
 //salvar dados no bd
 function save_data () {
     localStorage.setItem("Username", username.value);
