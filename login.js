@@ -48,20 +48,27 @@ btn_login.addEventListener('click', (event) => {
 })
 
 function buscarFatos() {
-        var fatos = Number(window.prompt("Number os facts:", ""));
+    var fatos = Number(window.prompt("Number os facts:", ""));
 
-        if(fatos == "") {
-            alert("Invalid value")
-            return false
-        }
-        else {
-            axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount='+fatos)
-            
-            .then(function(response){
-                console.log(response.data)
-                alert("fact\n" +response.data[3])
-    
-            })
-        }
-
+    if(fatos == "") {
+        alert("Invalid value")
+        return false
+    }
+    else if(fatos == 1) {
+        axios.get('https://cat-fact.herokuapp.com/facts/random')
+        .then(function(response){
+            console.log(response.data)
+            confirm("Fact:\n" +response.data.text)
+        })
+    }
+    else {
+        axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount='+fatos)
+        .then(function(response){
+            console.log(response.data)
+            for (i = 0; i < fatos; i++)
+            {
+                confirm("Fact " +(i+1)+":\n" +response.data[i].text)
+            }
+        })
+    }
 }
