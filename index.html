@@ -32,7 +32,7 @@
                     <nav class="lista2"> 
                         <ul>
                             <li class="lupa"><a href="manutencao.html"><img class="img_lupa" src="img/dribbble-lupa.svg" alt="dibbble_lupa"></a></li>
-                            <li class="sign_in"><a href="login.html">Sign in</a></li>
+                            <li class="sign_in"><button type="button" onclick="campo_login('text_content')">Sign in</button></li>
                             <li class="sign_up"><a href="cadastrar.html">Sign Up</a></li>
                         </ul>
                     </nav>                   
@@ -40,16 +40,34 @@
     </div>
     <div style="background: #F9F8FD">
         <div class="container_fundo">
-            <div class="text_content">
+            <div class="text_content" id="text_content">
                 <h1>Discover the world’s top designers & creatives</h1>
                 <p>Dribbble is the leading destination to find & showcase creative work and home to the world's best design professionals.</p>
                 <a class="sign_up2" href="cadastrar.html">Sign Up</a>
             </div>
-            <div class="img_content">
+            <div class="login_content" id="login_content">
+                <form action="">
+                    <fieldset>
+                        <label for="">Email Address</label>
+                        <input type="text" id="email_login">
+                        <label for="">Password</label>
+                        <input type="password" id="password_login">
+                        <button id="botao-login">Sign in</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="img_content" id="img_content">
                 <img src="img/dribbble-fundo.png" alt="dribbble-fundo" width="510px" height="360px">
                 <span>Art by 
                     <a href="https://dribbble.com/romainbriaux">Romain Briaux</a>
                 </span>
+            </div>
+            <div class="logged" id="logged">
+                <p>You're Logged</p>
+                <button type="button" id="buscar_fato" onclick="buscarFatos()" >Buscar fato</button>
+            </div>
+            <div class="fatos">
+                <p id="fato"></p>
             </div>
         </div>
         <div class="site-nav-mobile">
@@ -61,7 +79,7 @@
                     <a href="index.html"><img src="img/logo_site.svg" alt="dribbble_botão" width="76px" height="60px"></a>
                 </div>
                 <div class="sign_in">
-                    <a href="login.html">Sign in</a>
+                    <button type="button" onclick="campo_login">Sign in</button>
                 </div>
             </div>
         </div>
