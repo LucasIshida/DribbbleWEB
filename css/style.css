@@ -219,7 +219,7 @@ body {
         height: 232px;
     }
     .logged button {
-        float: left;
+        
         border-radius: 8px;
         border: none;
         background: #ea4c89;
@@ -234,6 +234,7 @@ body {
         font-size: 14px;
     }
     .fatos {
+        display: none;
         padding-top: 45px;
         float: right;
         width: 510px;

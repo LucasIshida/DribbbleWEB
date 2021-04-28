@@ -67,11 +67,12 @@
                 <p>You're Logged</p>
                 <label for="">Number of facts:</label>
                 <input type="number" id="number">
-                <button type="button" id="buscar_fato" onclick="buscarFatos()" >Buscar fato</button>
-                <button type="button" id="exit" onclick="exit()">Exit</button>
+                <button type="button" id="buscar_fato" onclick="buscarFatos()" >Search</button>
+                <button type="button" id="exit" onclick="exit()">Loggout</button>
             </div>
-            <div class="fatos">
-                <p id="fato"></p>
+            <div class="fatos" id="fato">
+                <ul id="lista_fatos">
+                </ul>
             </div>
         </div>
         <div class="site-nav-mobile">

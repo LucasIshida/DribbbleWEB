@@ -3,6 +3,7 @@ var text = document.getElementsByClassName("text_content");
 var btn_login = document.getElementById("botao-login");
 var email_login = document.getElementById("email_login");
 var password_login = document.getElementById("password_login");
+var fatos = document.getElementsByClassName("fatos");
 
 async function login_reqres (email, password)
 {
@@ -27,6 +28,8 @@ async function login_reqres (email, password)
     }
     )
     .catch (function (error) {
+        document.getElementById("invalid").style.display = 'block';
+        document.getElementById("invalid").innerHTML = ("Email not founded");
         return false;
     })
 }
@@ -67,10 +70,10 @@ btn_login.addEventListener('click', (event) => {
     {
         localStorage.setItem("Online", false);
         document.getElementById("invalid").style.display = 'block';
-        document.getElementById("invalid").innerHTML = ("Email inválido");
+        document.getElementById("invalid").innerHTML = ("Invalid email");
         return false;
     }
-    if ((email == localStorage.getItem("Username")) && password == localStorage.getItem("Password"))
+    else if ((email == localStorage.getItem("Username")) && password == localStorage.getItem("Password"))
     {
         localStorage.setItem("Online", true);
     }
@@ -85,18 +88,22 @@ btn_login.addEventListener('click', (event) => {
 })
 
 function buscarFatos() {
+    document.getElementById("fato").style.display = "block";
     var num = document.getElementById("number").value;
     var i;
     for (i = 0; i < num; i++)
         axios.get('https://cat-fact.herokuapp.com/facts/random')
         .then(function(response){
-            console.log(response.data)
-                document.getElementById("fato").innerHTML = ("Fact: " +response.data.text);
+                var novo_fato = ("- "+response.data.text);
+                var lista  = document.getElementById("lista_fatos").innerHTML;
+                lista = lista +"<li>"+novo_fato+"</li>";
+                document.getElementById("lista_fatos").innerHTML = lista;
     })
     }
 
 function exit() {
     localStorage.setItem("Online", false);
+    var reset = "";
     document.getElementById("logged").style.display = "none";
     document.getElementById("invalid").style.display = "none";
     document.getElementById("fato").style.display = "none";
