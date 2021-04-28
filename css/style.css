@@ -176,7 +176,10 @@ body {
     font-weight: bold;
     font-size: 14px;
     }
-
+    .invalid {
+        display: none;
+        color: red;
+    }
     .sign_up2 {
         display: inline-block;
         border-radius: 8px;
