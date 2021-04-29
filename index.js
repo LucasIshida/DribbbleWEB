@@ -4,6 +4,7 @@ var btn_login = document.getElementById("botao-login");
 var email_login = document.getElementById("email_login");
 var password_login = document.getElementById("password_login");
 var fatos = document.getElementsByClassName("fatos");
+var token;
 
 async function login_reqres (email, password)
 {
@@ -17,6 +18,8 @@ async function login_reqres (email, password)
     {
         if (response.status == 200)
         {
+            token = response.data.token;
+            console.log("token: " + token);
             document.getElementById("logged").style.display = "inline-block";
             localStorage.setItem("Online", true);
             document.getElementById("login_content").style.display = 'none';
@@ -91,7 +94,8 @@ function buscarFatos() {
     document.getElementById("fato").style.display = "block";
     var num = document.getElementById("number").value;
     var i;
-    for (i = 0; i < num; i++)
+    if (num == 1)
+    {
         axios.get('https://cat-fact.herokuapp.com/facts/random')
         .then(function(response){
                 var novo_fato = ("- "+response.data.text);
@@ -99,6 +103,20 @@ function buscarFatos() {
                 lista = lista +"<li>"+novo_fato+"</li>";
                 document.getElementById("lista_fatos").innerHTML = lista;
     })
+    }
+    else
+    {
+        axios.get("https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount="+num)
+        .then(function(response){
+            for (i = 0; i < num; i++)
+            {
+            var novo_fato = ("- "+response.data[i].text);
+            var lista  = document.getElementById("lista_fatos").innerHTML;
+            lista = lista +"<li>"+novo_fato+"</li>";
+            document.getElementById("lista_fatos").innerHTML = lista;
+        }
+})
+    }        
     }
 
 function exit() {
