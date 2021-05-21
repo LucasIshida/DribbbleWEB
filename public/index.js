@@ -42,7 +42,7 @@ function campo_login (el)
     }
     else if (display == "none")
     {
-        window.location.reload()
+        window.location.reload
     }
     else
     {  
@@ -70,9 +70,7 @@ function campo_cadastro (el)
 
     else if (display == "none")
     {
-        document.getElementById(el).style.display = 'inline-block';
-        document.getElementById("img_content").style.display = 'block';
-        document.getElementById("cadastro_content").style.display = 'none';
+        window.location.reload()
     }
     else
     {  
