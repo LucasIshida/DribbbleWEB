@@ -180,7 +180,7 @@ body {
     .cadastro_content {
         display: none;
         width: 300px;
-        height: 232px;
+        height: 300px;
         align-items: center;
         text-align: left;
     }
@@ -222,6 +222,10 @@ body {
     font-size: 14px;
     }
     .invalid {
+        display: none;
+        color: red;
+    }
+    .invalid_cad {
         display: none;
         color: red;
     }

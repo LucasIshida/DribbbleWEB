@@ -4,6 +4,7 @@ var btn_login = document.getElementById("botao-login");
 var btn_cadastro = document.getElementById("botao-cadastro");
 var email_login = document.getElementById("email_login");
 var password_login = document.getElementById("password_login");
+var confirm_passaword = document.getElementById("confirm_passaword");
 var fatos = document.getElementsByClassName("fatos");
 var token;
 
@@ -115,7 +116,7 @@ btn_login.addEventListener('click', (event) => {
     {
         localStorage.setItem("Online", false);
         document.getElementById("invalid").style.display = 'block';
-        document.getElementById("invalid").innerHTML = ("Invalid email");
+        document.getElementById("invalid").innerHTML = ("Invalid data");
         return false;
     }
     else if ((email == localStorage.getItem("Username")) && password == localStorage.getItem("Password"))
@@ -126,6 +127,44 @@ btn_login.addEventListener('click', (event) => {
     else
     {
         login_reqres (email, password);
+        return true;
+    }
+
+    return true;
+})
+
+btn_cadastro.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    var email_cadastro = document.getElementById("email_cadastro").value;
+    var password_cadastro = document.getElementById("password_cadastro").value;
+    var confirm_password = document.getElementById("confirm_password").value;
+
+    const emailRegex = /^[a-z0-9.]+@[a-z0-9]+.[a-z]+(.[a-z]+)?$/i
+
+    if(!emailRegex.test(email_cadastro))
+    {
+        localStorage.setItem("Online", false);
+        document.getElementById("invalid_cad").style.display = 'block';
+        document.getElementById("invalid_cad").innerHTML = ("Invalid data");
+        return false;
+    }
+    else if (password_cadastro == "")
+    {
+        localStorage.setItem("Online", false);
+        document.getElementById("invalid_cad").style.display = 'block';
+        document.getElementById("invalid_cad").innerHTML = ("Invalid data");
+    }
+    else if (password_cadastro != confirm_password)
+    {
+        localStorage.setItem("Online", false);
+        document.getElementById("invalid_cad").style.display = 'block';
+        document.getElementById("invalid_cad").innerHTML = ("Invalid data");
+    }
+
+    else
+    {
+        document.getElementById("invalid_cad").style.display = 'none';
         return true;
     }
 
