@@ -151,7 +151,7 @@ btn_cadastro.addEventListener('click', async (event) => {
     return true;
 })
 async function chamaPost(login,senha){ 
-    axios.post('http://localhost:8888/authenticate',{
+    axios.post('https://dribbbleweb.herokuapp.com/authenticate',{
   
       Email: login,
       Senha: senha
@@ -164,7 +164,7 @@ async function chamaPost(login,senha){
     })
   }
 async function chamaGet(login,senha){ 
-    await axios.get('http://localhost:8888/authenticate')
+    await axios.get('https://dribbbleweb.herokuapp.com/authenticate')
     .then(function(response)
     {
       for (const i in response.data) {
