@@ -62,7 +62,7 @@ body {
         color: #6e6d7a;
     }
     .lista2 {
-        width: 189.8px;
+        width: 200px;
         height: 100%;
         right: 0px;
     }
@@ -97,11 +97,12 @@ body {
         padding-left: 16px;
         padding-right: 16px;
     }
-    .sign_up a{
+    .sign_up button {
+        font-size: 14px;
+        background: #ea4c89;
+        border: none;
         text-decoration: none;
         color: #fff;
-        font-weight: bold;
-        font-size: 14px;
     }
     .sign_up:hover{
        opacity: 0.7;
@@ -159,6 +160,50 @@ body {
     background-color: #F0F0F0;
     }
     .login_content button 
+    {
+    width: 200px;
+    height: 100%;
+    float: left;
+    border-radius: 8px;
+    border: none;
+    background: #ea4c89;
+    margin-top: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    }
+    .cadastro_content {
+        display: none;
+        width: 300px;
+        height: 232px;
+        align-items: center;
+        text-align: left;
+    }
+    .cadastro_content label
+    {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 26px 0 4px;
+    }
+    .cadastro_content input
+    {
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: #F0F0F0;
+    }
+    .cadastro_content button 
     {
     width: 200px;
     height: 100%;

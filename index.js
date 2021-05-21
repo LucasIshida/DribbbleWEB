@@ -1,6 +1,7 @@
 var btn_campos = document.getElementById("campos_login");
 var text = document.getElementsByClassName("text_content");
 var btn_login = document.getElementById("botao-login");
+var btn_cadastro = document.getElementById("botao-cadastro");
 var email_login = document.getElementById("email_login");
 var password_login = document.getElementById("password_login");
 var fatos = document.getElementsByClassName("fatos");
@@ -42,9 +43,19 @@ function campo_login (el)
 
     if (localStorage.getItem("Online") == "true")
     {
+        document.getElementById("cadastro_content").style.display = 'none';
         document.getElementById(el).style.display = 'none';
         document.getElementById("img_content").style.display = 'none';
         document.getElementById("logged").style.display = "inline-block";
+    }
+    else if (document.getElementById("cadastro_content").style.display != 'none')
+    {
+        document.getElementById("cadastro_content").style.display = 'none';
+        document.getElementById(el).style.display = 'none';
+        document.getElementById("img_content").style.display = 'none';
+        document.getElementById("login_content").style.display = 'flex';
+        document.getElementById("email_login").innerHTML = ("");
+        document.getElementById("password_login").innerHTML = ("");
     }
     else if (display == "none")
     {
@@ -54,9 +65,40 @@ function campo_login (el)
     }
     else
     {  
+        document.getElementById("cadastro_content").style.display = 'none';
         document.getElementById(el).style.display = 'none';
         document.getElementById("img_content").style.display = 'none';
         document.getElementById("login_content").style.display = 'flex';
+        document.getElementById("email_login").innerHTML = ("");
+        document.getElementById("password_login").innerHTML = ("");
+    }
+}
+function campo_cadastro (el)
+{
+    var display = document.getElementById(el).style.display;
+
+    if (document.getElementById("login_content").style.display != 'none')
+    {
+        document.getElementById("login_content").style.display = 'none';
+        document.getElementById(el).style.display = 'none';
+        document.getElementById("img_content").style.display = 'none';
+        document.getElementById("cadastro_content").style.display = 'flex';
+        document.getElementById("email_login").innerHTML = ("");
+        document.getElementById("password_login").innerHTML = ("");
+    }
+
+    else if (display == "none")
+    {
+        document.getElementById(el).style.display = 'inline-block';
+        document.getElementById("img_content").style.display = 'block';
+        document.getElementById("cadastro_content").style.display = 'none';
+    }
+    else
+    {  
+        document.getElementById("login_content").style.display = 'none';
+        document.getElementById(el).style.display = 'none';
+        document.getElementById("img_content").style.display = 'none';
+        document.getElementById("cadastro_content").style.display = 'flex';
         document.getElementById("email_login").innerHTML = ("");
         document.getElementById("password_login").innerHTML = ("");
     }
