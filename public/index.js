@@ -8,6 +8,15 @@ var confirm_passaword = document.getElementById("confirm_passaword");
 var fatos = document.getElementsByClassName("fatos");
 var token;
 
+function verificarSessão (){
+
+    if (localStorage.getItem("Online") != "true"){
+        campo_login("text_content")
+    }
+}
+
+verificarSessão()
+
 function campo_login (el)
 {
     var display = document.getElementById(el).style.display;
@@ -30,9 +39,7 @@ function campo_login (el)
     }
     else if (display == "none")
     {
-        document.getElementById(el).style.display = 'inline-block';
-        document.getElementById("img_content").style.display = 'block';
-        document.getElementById("login_content").style.display = 'none';
+        window.location.href = "../views/index.html"
     }
     else
     {  
@@ -162,6 +169,7 @@ async function chamaGet(login,senha){
         if(response.data[i].Email == login && response.data[i].Senha == senha){
           localStorage.setItem("Online", true)
           document.getElementById("invalid").style.display = 'none';
+          window.location.href = "../views/index.html"
           break
         }
         else
@@ -183,7 +191,7 @@ function buscarFatos() {
                 var lista  = document.getElementById("lista_fatos").innerHTML;
                 lista = lista +"<li>"+novo_fato+"</li>";
                 document.getElementById("lista_fatos").innerHTML = lista;
-    })
+        })
     }
     else
     {
@@ -195,10 +203,10 @@ function buscarFatos() {
             var lista  = document.getElementById("lista_fatos").innerHTML;
             lista = lista +"<li>"+novo_fato+"</li>";
             document.getElementById("lista_fatos").innerHTML = lista;
-        }
-})
+            }
+        })
     }        
-    }
+}
 
 function exit() {
     localStorage.setItem("Online", false);
