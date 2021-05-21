@@ -42,7 +42,7 @@ function campo_login (el)
     }
     else if (display == "none")
     {
-        window.location.href = "../views/index.html"
+        window.location.reload()
     }
     else
     {  
