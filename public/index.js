@@ -13,6 +13,9 @@ function verificarSessão (){
     if (localStorage.getItem("Online") != "true"){
         campo_login("text_content")
     }
+    else{
+        document.getElementById("logged").style.display = "inline-block";
+    }
 }
 
 verificarSessão()
@@ -158,9 +161,8 @@ async function chamaPost(login,senha){
     })
     .catch(function (error) {
       console.log(error);
-    }) 
+    })
   }
-
 async function chamaGet(login,senha){ 
     await axios.get('http://localhost:8888/authenticate')
     .then(function(response)
@@ -210,9 +212,5 @@ function buscarFatos() {
 
 function exit() {
     localStorage.setItem("Online", false);
-    var reset = "";
-    document.getElementById("logged").style.display = "none";
-    document.getElementById("invalid").style.display = "none";
-    document.getElementById("fato").style.display = "none";
-    campo_login("text_content");
+    window.location.href = "../views/index.html"
 }
