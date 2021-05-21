@@ -8,36 +8,6 @@ var confirm_passaword = document.getElementById("confirm_passaword");
 var fatos = document.getElementsByClassName("fatos");
 var token;
 
-async function login_reqres (email, password)
-{
-    await axios.post('https://reqres.in/api/login', 
-    {
-        email: email,
-        password: password
-    })
-    
-    .then(function (response)
-    {
-        if (response.status == 200)
-        {
-            token = response.data.token;
-            console.log("token: " + token);
-            document.getElementById("logged").style.display = "inline-block";
-            localStorage.setItem("Online", true);
-            document.getElementById("login_content").style.display = 'none';
-        }
-        else
-        {
-            localStorage.setItem("Online", false);
-        }
-    }
-    )
-    .catch (function (error) {
-        document.getElementById("invalid").style.display = 'block';
-        document.getElementById("invalid").innerHTML = ("Email not founded");
-        return false;
-    })
-}
 function campo_login (el)
 {
     var display = document.getElementById(el).style.display;
@@ -104,7 +74,7 @@ function campo_cadastro (el)
         document.getElementById("password_login").innerHTML = ("");
     }
 }
-btn_login.addEventListener('click', (event) => {
+btn_login.addEventListener('click', async (event) => {
     event.preventDefault();
 
     var email = document.getElementById("email_login").value;
@@ -126,14 +96,14 @@ btn_login.addEventListener('click', (event) => {
 
     else
     {
-        login_reqres (email, password);
+        await chamaGet(email, password)
         return true;
     }
 
     return true;
 })
 
-btn_cadastro.addEventListener('click', (event) => {
+btn_cadastro.addEventListener('click', async (event) => {
     event.preventDefault();
 
     var email_cadastro = document.getElementById("email_cadastro").value;
@@ -161,16 +131,46 @@ btn_cadastro.addEventListener('click', (event) => {
         document.getElementById("invalid_cad").style.display = 'block';
         document.getElementById("invalid_cad").innerHTML = ("Invalid data");
     }
-
     else
     {
         document.getElementById("invalid_cad").style.display = 'none';
+        await chamaPost(email_cadastro, password_cadastro)
         return true;
     }
 
     return true;
 })
+async function chamaPost(login,senha){ 
+    axios.post('http://localhost:8888/authenticate',{
+  
+      Email: login,
+      Senha: senha
+  
+    }).then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    }) 
+  }
 
+async function chamaGet(login,senha){ 
+    await axios.get('http://localhost:8888/authenticate')
+    .then(function(response)
+    {
+      for (const i in response.data) {
+        if(response.data[i].Email == login && response.data[i].Senha == senha){
+          localStorage.setItem("Online", true)
+          document.getElementById("invalid").style.display = 'none';
+          break
+        }
+        else
+        {
+            localStorage.setItem("Online", false)
+        }
+      }
+    })  
+}
 function buscarFatos() {
     document.getElementById("fato").style.display = "block";
     var num = document.getElementById("number").value;
