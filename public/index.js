@@ -171,7 +171,7 @@ async function chamaGet(login,senha){
         if(response.data[i].Email == login && response.data[i].Senha == senha){
           localStorage.setItem("Online", true)
           document.getElementById("invalid").style.display = 'none';
-          window.location.href = "../views/index.html"
+          window.location.reload()
           break
         }
         else
@@ -212,5 +212,5 @@ function buscarFatos() {
 
 function exit() {
     localStorage.setItem("Online", false);
-    window.location.href = "../views/index.html"
+    window.location.reload()
 }
