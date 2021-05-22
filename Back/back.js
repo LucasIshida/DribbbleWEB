@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const dataSchema = require('../Back/schema');
 const bodyParser = require('body-parser');
 var cors = require('cors');
+const dataTexto = require('../Back/texto');
 
 
 app.use(bodyParser.json());
@@ -51,3 +52,28 @@ app.use('/public', express.static(path.join(__dirname, '../public')))
 app.get('/', (req, res) =>{
   res.render('index');
 })
+
+app.get('/contribuition',function(req,res){
+  dataTexto.find(function(err,usuario){
+   if(err){
+     console.log(err)
+     }  
+   else{
+     res.send(usuario)
+   }
+  })
+})
+
+app.post('/contribuition', (req,res) => {
+  const post = new dataTexto({
+    Texto: req.body.Texto
+  })
+
+  post.save()
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json({message: err});
+    });
+});

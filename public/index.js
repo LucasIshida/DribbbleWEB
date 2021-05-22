@@ -15,6 +15,7 @@ function verificarSessão (){
     }
     else{
         document.getElementById("logged").style.display = "inline-block";
+        document.getElementById("post").style.display = 'block';
     }
 }
 
@@ -211,4 +212,31 @@ function buscarFatos() {
 function exit() {
     localStorage.setItem("Online", false);
     window.location.reload()
+}
+
+async function postar(){ 
+    var novo = document.getElementById("post_novo").value
+    axios.post('https://dribbbleweb.herokuapp.com/contribuition',{
+        
+        Texto: novo
+  
+    }).then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
+
+async function mostrar(){
+    await axios.get('https://dribbbleweb.herokuapp.com/contribuition')
+    .then(function(response)
+    {
+        var lista2 = document.getElementById("lista-post").innerHTML;
+        lista2 = ""
+        for (const i in response.data) {
+            lista2 = lista2 +"<li>"+response.data[i].Texto+"</li>";
+            document.getElementById("lista-post").innerHTML = lista2;
+        }
+    })
 }
